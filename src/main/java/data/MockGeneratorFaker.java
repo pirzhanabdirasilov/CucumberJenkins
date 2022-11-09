@@ -27,8 +27,8 @@ public class MockGeneratorFaker {
     public static String generatorMockBIO(){
         return faker.internet().macAddress();
     }
-    public static String generatorMockNumber(){
-        return String.valueOf(MockGeneratorFaker.faker.number().numberBetween(0,10));
+    public static String generatorMockNumber(int first,int last){
+        return String.valueOf(MockGeneratorFaker.faker.number().numberBetween(first,last));
     }
     public static int generatorMockNumber1(){
         return MockGeneratorFaker.faker.number().numberBetween(0,2);

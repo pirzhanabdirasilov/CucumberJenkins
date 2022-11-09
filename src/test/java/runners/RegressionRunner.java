@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         },
         features = {" "},
         glue = {"com/imoving/step_defs"},
-        tags = {"@regression"},
+        tags = {"@Regression"},
         monochrome = true,
         strict = true,
         dryRun = false

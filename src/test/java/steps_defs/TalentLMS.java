@@ -68,20 +68,11 @@ public class TalentLMS extends BaseTest {
        addCreatePage.inputEmail(MockGeneratorFaker.generatorMockEmail())
                .inputPassword(MockGeneratorFaker.generatorMockPassword())
                .inputUserName(MockGeneratorFaker.generatorMockUserName());
-       helper.pause(3);
+       helpers.pause(3);
                addCreatePage.buttonAddNew();
                Driver.getDriver().navigate().back();
                Driver.getDriver().navigate().back();
 
 
     }
-//    @Then("^verify following fields names$")
-//    public void verify_following_fields_names(DataTable arg1) throws Throwable {
-//
-//    }
-//
-//    @Then("^enter following data to create new user$")
-//    public void enter_following_data_to_create_new_user(DataTable arg1) throws Throwable {
-//
-//    }
 }

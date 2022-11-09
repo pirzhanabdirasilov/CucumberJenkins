@@ -17,7 +17,8 @@ Feature: Login functionality
     Then  user add courses
     And user add User
 
-  @smoke
+
+  @Regression
   Scenario: Data
     Given Enter "Team1" in userName or Email input field
     And Enter "Team1234" in password input field

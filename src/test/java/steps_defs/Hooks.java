@@ -1,5 +1,6 @@
 package steps_defs;
 
+import MethodFactory.MethodsHelpers;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -18,6 +19,7 @@ public class Hooks {
     }
 
 
+
     @After
     public void tearDown(Scenario scenario) {
 
@@ -31,6 +33,8 @@ public class Hooks {
                     e.getMessage());
         }
 
+         MethodsHelpers methodsHelpers = new MethodsHelpers();
+        methodsHelpers.pause(5);
         Driver.closeDriver();
         System.out.println("After hook driver is closed");
     }

@@ -1,35 +1,38 @@
 package steps_defs;
 
-import PageWeb.BasePage;
-import PageWeb.IMovingPage;
-import data.ConfigReader;
-import drivers.Driver;
-import drivers.MacOs;
-import org.junit.Assert;
+
 import org.junit.Test;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariOptions;
 
-
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class Main extends BaseTest {
 
 
+    public static void main(String[] args) {
+        String str = "dmsdmsl";
 
+
+    }
 
 
     @Test
-    public void test1() {
-        Driver.getDriver().get("https://qa.imoving.com/");
-        iMovingPage.house(2,3)
-                .click5(5);
+    public void test1(){
+        goToWebSite("https://www.w3schools.com/html/html_tables.asp");
+
+        try {
+            helpers.arrowDown(6);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+//       List<WebElement> Headers = Driver.getDriver().findElements(By.xpath("(//table[@id='customers']//tbody//tr)[1]"));
+//
+//        for(WebElement el : Headers){
+//            System.out.println(el.getText());
+//        }
+//        tablesPage.tableMethods();
+
+
 
     }
 

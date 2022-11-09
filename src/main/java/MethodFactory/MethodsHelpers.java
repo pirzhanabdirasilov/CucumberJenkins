@@ -80,13 +80,27 @@ public class MethodsHelpers {
         js.executeScript("window.scrollBy(0,800");
         return this;
     }
-    public MethodsHelpers pageDown(int num)throws  Exception {
+
+    public MethodsHelpers javascriptScrollUpThePage(int in){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy("+in + ",0");
+        return this;
+    }
+//    public MethodsHelpers pageDown(int num)throws  Exception {
+//        Robot robot = new Robot();
+//        for (int i = 0; i < num; i++) {
+//            robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+//            robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+//        }
+//        return this;
+//    }
+
+    public void arrowDown(int num)throws  Exception {
         Robot robot = new Robot();
         for (int i = 0; i < num; i++) {
-            robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-            robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+            robot.keyPress(KeyEvent.VK_DOWN);
+            robot.keyRelease(KeyEvent.VK_DOWN);
         }
-        return this;
     }
     public MethodsHelpers jsClick(WebElement element){
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
@@ -112,6 +126,7 @@ public class MethodsHelpers {
     }
 
     public MethodsHelpers multipleClick(int howMAny,WebElement element){
+        waitElementToBeDisplayed(element).waitElementToBeClickable(element);
         for (int i = 0; i < howMAny; i++) {
             waitElementToBeDisplayed(element);
             waitElementToBeClickable(element);
@@ -122,6 +137,13 @@ public class MethodsHelpers {
     }
 
 
+    public MethodsHelpers keysButton(WebElement element,Keys keys,int in){
+        for (int i = 0; i < in; i++) {
+            element.click();
+        }
+        element.sendKeys(keys);
+        return this;
+    }
 
 
 //    public Helper downButton() throws AWTException {

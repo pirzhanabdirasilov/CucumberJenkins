@@ -1,21 +1,27 @@
 package steps_defs;
 
 import MethodFactory.MethodsHelpers;
+import POJO.HTMLTablesPojo;
 import PageWeb.*;
+import PageWeb.imovingPage.Scenario1;
+import PageWeb.imovingPage.Scenario2;
+import PageWeb.imovingPage.Scenario3;
+import PageWeb.imovingPage.Test1IMoving;
+import PageWeb.user.AddCreatePage;
+import PageWeb.user.AddNewCourses;
 import com.github.javafaker.Faker;
 import drivers.Driver;
 import drivers.DriverInterface;
 import drivers.DriverMethods;
-import gherkin.lexer.Da;
+import org.assertj.core.api.SoftAssertions;
+import org.openqa.selenium.WebElement;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public  abstract class BaseTest extends BasePage implements DriverInterface {
 
-
-   protected MethodsHelpers helper = new MethodsHelpers();
-   protected LoginPage loginPage = new LoginPage();
+   protected SoftAssertions softAssert = new SoftAssertions();
 
 
    protected Faker faker = new Faker();
@@ -34,6 +40,16 @@ public  abstract class BaseTest extends BasePage implements DriverInterface {
 
    protected Test1IMoving iMoving = new Test1IMoving();
 
+   protected HTMLTablesPage tablesPage = new HTMLTablesPage();
+
+   protected HTMLTablesPojo pojo = new HTMLTablesPojo();
+
+   protected Scenario1 scenario1 = new Scenario1();
+
+   protected Scenario2 scenario2 = new Scenario2();
+
+   protected Scenario3 scenario3 = new Scenario3();
+
 
 
 
@@ -51,6 +67,9 @@ public  abstract class BaseTest extends BasePage implements DriverInterface {
    @Override
    public void goToWebSite(String usl) {
       driverMethods.openToUrl(usl);
+   }
+   public void switchFrame(WebElement element){
+      driverMethods.switchTo(element);
    }
 
 

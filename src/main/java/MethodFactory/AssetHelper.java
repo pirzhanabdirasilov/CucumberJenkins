@@ -15,6 +15,13 @@ public class AssetHelper {
         helpers.waitElementToBeDisplayed(element);
         Assert.assertEquals(expected,helpers.getText(element));
     }
+    public static void assertInt(int expected, WebElement element){
+        helpers.waitElementToBeDisplayed(element);
+        Assert.assertEquals(expected,helpers.getText(element));
+    }
+
+
+
 
 
 
