@@ -24,7 +24,7 @@ public class Scenario1 extends BasePage {
     private WebElement backClickJourneyButton;
 
     public Scenario1 clickJourney(){
-        AssetHelper.assertText("Moving Journey - 10 Miles",textJourney);
+        AssetHelper.assertText("Moving Journey - 0 Miles",textJourney);
         helpers.jsClick(clickJourneyButton)
                 .pause(2);
         return this;

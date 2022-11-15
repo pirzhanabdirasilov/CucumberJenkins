@@ -1,6 +1,6 @@
 package steps_defs;
 
-import MethodFactory.MethodsHelpers;
+
 import POJO.HTMLTablesPojo;
 import PageWeb.*;
 import PageWeb.imovingPage.Scenario1;
@@ -18,6 +18,7 @@ import org.openqa.selenium.WebElement;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.Random;
 
 public  abstract class BaseTest extends BasePage implements DriverInterface {
 
@@ -49,6 +50,8 @@ public  abstract class BaseTest extends BasePage implements DriverInterface {
    protected Scenario2 scenario2 = new Scenario2();
 
    protected Scenario3 scenario3 = new Scenario3();
+
+   protected Random random = new Random();
 
 
 

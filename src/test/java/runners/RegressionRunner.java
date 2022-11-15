@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
                 "html:target/default-cucumber-reports",
                 "json:target/cucumber.json"
         },
-        features = {" "},
-        glue = {"com/imoving/step_defs"},
+        features = {"classpath:features"},
+        glue = {"steps_defs"},
         tags = {"@Regression"},
         monochrome = true,
         strict = true,
